@@ -1,0 +1,49 @@
+{
+  "name": "biosworld-react",
+  "private": true,
+  "homepage": "https://biosworld.io/",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.7.2",
+    "@material-tailwind/react": "^2.0.6",
+    "@usedapp/core": "^1.2.11",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "@web3-react/core": "^8.2.0",
+    "@web3-react/walletconnect-connector": "^6.2.13",
+    "buffer-polyfill": "^6.0.3",
+    "ethers": "^5.7.2",
+    "i18next": "^23.2.11",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-countdown": "^2.3.5",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.2",
+    "react-moment": "^1.1.3",
+    "react-scroll": "^1.8.9",
+    "react-toastify": "^9.1.3",
+    "wagmi": "^1.3.9",
+    "web3modal": "^1.9.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "@web3-react/injected-connector": "^6.0.7",
+    "@web3-react/walletlink-connector": "^6.2.14",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9"
+  }
+}
