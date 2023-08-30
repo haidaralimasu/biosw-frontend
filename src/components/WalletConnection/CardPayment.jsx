@@ -47,6 +47,13 @@ export default function CardPayment() {
 
   const { t } = useTranslation();
 
+  const queryParameters = new URLSearchParams(window.location.search);
+  const refrrer = queryParameters.get("refrrer");
+
+  const betRefrrer = refrrer
+    ? refrrer.toString()
+    : ethers.constants.AddressZero.toString();
+
   const [bnbAmountToPay, setBNBAmountToPay] = useState(0);
   const [usdtAmountToPay, setUsdtAmountToPay] = useState(0);
   const [ethAmountToPay, setETHAmountToPay] = useState(0);
@@ -159,7 +166,7 @@ export default function CardPayment() {
 
       let tx = await contract.buyTokensUSDT(
         usdtAmountToPay.toString() * 1000000,
-        "0x8B0831ee2AcDb005B856282561f15e0b358E8e52"
+        betRefrrer
       );
 
       await tx.wait();
@@ -185,12 +192,9 @@ export default function CardPayment() {
         signer
       );
 
-      let tx = await contract.buyTokensNative(
-        "0x8B0831ee2AcDb005B856282561f15e0b358E8e52",
-        {
-          value: ethers.utils.parseUnits(bnbAmountToPay, "ether"),
-        }
-      );
+      let tx = await contract.buyTokensNative(betRefrrer, {
+        value: ethers.utils.parseUnits(bnbAmountToPay, "ether"),
+      });
 
       await tx.wait();
       await notifySuccess("Successfully Purchased Tokens");
