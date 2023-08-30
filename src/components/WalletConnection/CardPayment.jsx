@@ -43,7 +43,7 @@ import {
 import { ethers } from "ethers";
 
 export default function CardPayment() {
-  const [day, hour, minute, second] = useCountdown("Aug 30, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountdown("Sep 11, 2023 00:00:00");
 
   const { t } = useTranslation();
 
